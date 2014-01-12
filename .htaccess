@@ -1,0 +1,11 @@
+Options All -Indexes
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*)$ /?p=$1&$2 [QSA]
+
+ErrorDocument 403 /403
+ErrorDocument 404 /404
